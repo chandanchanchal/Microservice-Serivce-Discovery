@@ -17,7 +17,7 @@ public class ActivityController {
 
     private RestTemplate restTemplate;
 
-    private final String BORED_API = "https://www.boredapi.com/api/activity";
+    private final String BORED_API = "https://bored.api.lewagon.com/api/activity";
 
     public ActivityController(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
@@ -28,7 +28,8 @@ public class ActivityController {
     public String getRandomActivity() {
         ResponseEntity<Activity> responseEntity = restTemplate.getForEntity(BORED_API, Activity.class);
         Activity activity = responseEntity.getBody();
-        log.info("Activity received: " + activity.getActivity());
+        System.out.println("Activity received: " + activity.getActivity());
+		//log.info("Activity received: " + activity.getActivity());
         return activity.getActivity();
     }
 
