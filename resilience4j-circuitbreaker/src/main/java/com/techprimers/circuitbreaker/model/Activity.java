@@ -25,4 +25,12 @@ public class Activity {
     private Integer participants;
     private Double price;
     private Double accessibility;
+    
+    public String getActivity() {
+        return activity;
+    }
+
+    public void setActivity(String activity) {
+        this.activity = activity;
+    }
 }
